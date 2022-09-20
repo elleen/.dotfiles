@@ -1,0 +1,43 @@
+
+# nav
+alias ..="cd .."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias ~="cd ~"
+
+# list
+alias ls="ls -G"
+alias ll="ls -AGFoh"
+
+# git
+alias g="git"
+alias ga="git add"
+alias gaa="git add --all"
+alias gb="git branch"
+alias gbl="git branch --list"
+alias gca="git commit --amend"
+alias gcl="git clone"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gd="git diff"
+alias gdn="git diff --name-only"
+alias gf="git fetch upstream"
+alias gnit="git commit --amend --no-edit"
+alias gl="git log"
+alias glg="git log --graph"
+alias gp="git push"
+alias gpf="git push --force"
+alias grb="git rebase"
+alias gs="git status"
+
+# git aliases autocomplete
+# https://gist.github.com/scue/576310b7c6b7714aad05
+type __git_complete >/dev/null 2>&1 && {
+    __git_complete   g        _git
+    __git_complete   gd       _git_diff
+    __git_complete   gl       _git_pull
+    __git_complete   gco      _git_checkout
+    __git_complete   gcm      _git_checkout
+    __git_complete   grb      _git_rebase
+    __git_complete   gb       _git_branch
+}

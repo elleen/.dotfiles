@@ -21,20 +21,22 @@ mkdir -p $olddir
 cd $dir
 shopt -s extglob
 for f in .!(|.); do
-  if [[ -d $f || $f == ".gitignore" ]]; then
+
+  # ignore git-related things that are specific to this repo
+  if [[ $f == ".git" || $f == ".gitignore" ]]; then
     printf "ignoring $f\n"
     continue
   fi
 
-  # back up existing file, if it exists
-  if [[ -f ~/$f ]]; then
-    printf "backing up ~/$f to $olddir\n"
+  # back up existing file, if it exists, then delete the link
+  printf "backing up ~/$f to $olddir\n"
+  if [[ -f ~/$f || -d ~/$f ]]; then
     mv ~/$f $olddir
+    rm ~/$f
   fi
   
   # create symlink
   printf "symlinking $dir/$f to ~/$f\n"
-  # check if file exists in homedir
   ln -s $dir/$f ~/$f
 done
 printf "dotfiles install done\n"

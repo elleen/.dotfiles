@@ -1,5 +1,9 @@
 # ~/.zshrc
 
+source ~/.dotfiles/aliases
+
+### zsh prompt ###
+# https://dev.to/voracious/a-guide-to-customizing-the-zsh-shell-prompt-2an6  
 
 # figure out the git status of this repo
 parse_git_dirty() {
@@ -13,8 +17,9 @@ setopt prompt_subst
 
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
-zstyle ':vcs_info:git*' formats ' ↣ %F{254}%F{green}%b%F{245}' # format $vcs_info_msg_0_
+zstyle ':vcs_info:git*' formats ' ↣ %F{254}%F{green}%b%F{245} ' # format $vcs_info_msg_0_
 
 
-PS1='%F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_} $(parse_git_dirty) %F{254}$%f '
+PS1='%F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_}$(parse_git_dirty) %F{254}$%f '
 
+###
