@@ -1,0 +1,11 @@
+
+
+https://github.com/michaeljsmalley/dotfiles/blob/master/makesymlinks.sh
+-- install.sh
+
+https://github.com/mathiasbynens/dotfiles
+-- .gitconfig
+-- 
+
+https://gist.github.com/simonista/8703722
+-- .vimrc

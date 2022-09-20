@@ -10,6 +10,9 @@ dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles/old             # old dotfiles backup directory
 
 
+
+cd "$(dirname "${BASH_SOURCE}")";
+
 # create dotfiles_old
 printf "backing up existing dotfiles in ~ to $olddir...\n"
 mkdir -p $olddir
@@ -18,6 +21,11 @@ mkdir -p $olddir
 cd $dir
 shopt -s extglob
 for f in .!(|.); do
+  if [[ -d $f || $f == ".gitignore" ]]; then
+    printf "ignoring $f\n"
+    continue
+  fi
+
   # back up existing file, if it exists
   if [[ -f ~/$f ]]; then
     printf "backing up ~/$f to $olddir\n"
