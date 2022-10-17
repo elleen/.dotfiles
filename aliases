@@ -41,3 +41,6 @@ type __git_complete >/dev/null 2>&1 && {
     __git_complete   grb      _git_rebase
     __git_complete   gb       _git_branch
 }
+
+# public key
+alias pk="cat ~/.ssh/id_ed25519.pub | pbcopy"
