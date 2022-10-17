@@ -2,13 +2,11 @@
 
 bc I have struggled far too many times setting up new machines 🥲
 
-
 ## todos
 - gpg aliases
-- copy pubkey alias
 - homebrew, other package setup
 - actually test git alias auto-completion
-
+- consider adding .vscode ? 
 
 ## resources
 

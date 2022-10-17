@@ -1,6 +1,7 @@
 # ~/.zshrc
 
 source ~/.dotfiles/aliases
+source ~/.dotfiles/aliases_uchicago
 
 ### zsh prompt ###
 # https://dev.to/voracious/a-guide-to-customizing-the-zsh-shell-prompt-2an6  
