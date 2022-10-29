@@ -3,6 +3,11 @@
 source ~/.dotfiles/aliases
 source ~/.dotfiles/aliases_uchicago
 
+# enable completions
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
 ### zsh prompt ###
 # https://dev.to/voracious/a-guide-to-customizing-the-zsh-shell-prompt-2an6  
 

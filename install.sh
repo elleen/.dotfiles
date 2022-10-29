@@ -1,15 +1,46 @@
 #!/bin/bash
 
-# install script for symlinking homedir to dotfiles in this repo
+### xcode installed, mac app store signed in warning
+printf "⚠️  warning! this script requires you to be signed into the app store and
+xcode to be installed\n"
+read -n 1 -s -r -p "press any key to continue, ctrl+z to quit"
+printf "\n"
+
+### install Homebrew stuff
+printf "setting up Homebrew\n"
+# install brew if it's not installed
+if test ! $(which brew); then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew update
+brew tap homebrew/bundle
+brew bundle
+printf "brewing done\n"
+###
+
+
+### install macOS apps
+printf "installing macOS apps\n"
+mas install 413857545 # Divvy
+###
+
+
+### git completion
+mkdir -p ~/.zsh && cd ~/.zsh
+curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+[[ -f ~/.zcompdump ]] && rm ~/.zcompdump
+###
+
+
+### dotfile stuff
+# symlink homedir to dotfiles in this repo
 # https://github.com/michaeljsmalley/dotfiles/blob/master/makesymlinks.sh 
-
-
 
 # variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles/old             # old dotfiles backup directory
-
-
 
 cd "$(dirname "${BASH_SOURCE}")";
 

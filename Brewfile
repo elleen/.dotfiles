@@ -1,0 +1,18 @@
+tap 'homebrew/bundle'
+
+brew 'ffmpeg'
+brew 'git'
+brew 'gpg'
+brew 'imagemagick'
+brew 'mas'
+brew 'npm'
+brew 'python'
+brew 'ykman'
+
+cask '1password'
+cask 'alfred'
+cask 'discord'
+cask 'firefox'
+cask 'slack'
+cask 'visual-studio-code'
+cask 'zotero'
