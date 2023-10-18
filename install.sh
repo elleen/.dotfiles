@@ -71,3 +71,12 @@ for f in .!(|.); do
   ln -s $dir/$f ~/$f
 done
 printf "dotfiles install done\n"
+
+# add java versions to jenv
+java_dir=/Library/Java/JavaVirtualMachines/
+for version in ${java_dir}*/
+do
+  java_version=${version}Contents/Home
+  jenv add $java_version
+done
+printf "jenv setup done\n"

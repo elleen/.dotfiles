@@ -1,3 +1,5 @@
+# shows this file
+alias aliases="cat ~/.dotfiles/aliases"
 
 # nav
 alias ..="cd .."
@@ -44,3 +46,9 @@ type __git_complete >/dev/null 2>&1 && {
 
 # public key
 alias pk="cat ~/.ssh/id_ed25519.pub | pbcopy"
+
+# caffeinate
+alias caf="caffeinate"
+
+# default to py3
+alias python="python3"
