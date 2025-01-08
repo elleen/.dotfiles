@@ -33,6 +33,9 @@ curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion
 [[ -f ~/.zcompdump ]] && rm ~/.zcompdump
 ###
 
+### enable key repeats
+defaults write -g ApplePressAndHoldEnabled -bool false
+### 
 
 ### dotfile stuff
 # symlink homedir to dotfiles in this repo
@@ -72,7 +75,11 @@ for f in .!(|.); do
 done
 printf "dotfiles install done\n"
 
-# add java versions to jenv
+### dev setup
+read -n 1 -s -r -p "press any key to do dev setup, ctrl+z to quit"
+
+# install java
+printf "installing java\n"
 java_dir=/Library/Java/JavaVirtualMachines/
 for version in ${java_dir}*/
 do

@@ -4,9 +4,6 @@ bc I have struggled far too many times setting up new machines 🥲
 
 ## todos
 - gpg aliases
-- homebrew, other package setup
-- actually test git alias auto-completion
-- consider adding .vscode ? 
 
 ## resources
 
