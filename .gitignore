@@ -1,3 +1,4 @@
 old/
 aliases_uchicago
 Brewfile.lock.json
+.DS_Store

@@ -11,6 +11,9 @@ printf "setting up Homebrew\n"
 # install brew if it's not installed
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo >> /Users/elleen/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/elleen/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 brew update

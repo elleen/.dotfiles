@@ -11,7 +11,6 @@ brew 'python'
 brew 'sqlite3'
 brew 'ykman'
 
-tap 'homebrew/cask-versions'
-
 cask '1password'
 cask 'alfred'
+cask 'divvy'

@@ -1,7 +1,6 @@
 # ~/.zshrc
 
 source ~/.dotfiles/aliases
-source ~/.dotfiles/aliases_uchicago
 
 # enable completions
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
@@ -34,11 +33,3 @@ zstyle ':vcs_info:git*' formats ' ↣ %F{254}%F{green}%b%F{245} ' # format $vcs_
 PS1='%F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_}$(parse_git_dirty) %F{254}$%f '
 
 ###
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# android-sdk
-export ANDROID_HOME="/Users/elleen/.android/"
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
