@@ -2,6 +2,21 @@
 
 bc I have struggled far too many times setting up new machines 🥲
 
+## manual setup steps
+
+- Import Afterglow as terminal theme
+- Set up Alfred to replace spotlight search
+- Set up Firefox profiles https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles
+
+### macOS
+- Sound > Play sound on startup, Play user interface sound effects, Play feedbackk when volume is changed --> off
+- Keyboard > key repeat rate > fast
+- Keyboard > delay until repeat > short
+- Trackpad tracking speed --> fast
+- Trackpad > scroll & zoom > natural scrolling --> off
+- Lock screen hot corner (bottom left)
+- Control center hot corner (top right)
+
 ## todos
 - gpg aliases
 

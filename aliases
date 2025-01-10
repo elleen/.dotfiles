@@ -52,3 +52,7 @@ alias caf="caffeinate"
 
 # default to py3
 alias python="python3"
+
+# ff profiles
+alias ffd="open -n -a Firefox.app --args -no-remote -P 'default'"
+alias ffp="open -n -a Firefox.app --args -no-remote -P 'personal'"

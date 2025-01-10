@@ -50,6 +50,8 @@
   autoSetupRemote = true
 
 [user]
-  name = Elleen Pan
-  email = elleen@elleenpan.com
+	name = Elleen Pan
+	email = elleen@cloudflare.com
 
+[include]
+	path = /Users/elleen/.local/share/cloudflare-warp-certs/gitconfig
