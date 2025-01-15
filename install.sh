@@ -22,13 +22,6 @@ brew bundle
 printf "brewing done\n"
 ###
 
-
-### install macOS apps
-printf "installing macOS apps\n"
-mas install 413857545 # Divvy
-###
-
-
 ### git completion
 mkdir -p ~/.zsh && cd ~/.zsh
 curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
