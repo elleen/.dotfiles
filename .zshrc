@@ -1,5 +1,6 @@
 # ~/.zshrc
 
+source ~/.dotfiles/.zshrc_cf
 source ~/.dotfiles/aliases
 
 # enable completions
