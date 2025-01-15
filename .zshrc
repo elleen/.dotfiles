@@ -2,6 +2,7 @@
 
 source ~/.dotfiles/.zshrc_cf
 source ~/.dotfiles/aliases
+source ~/.dotfiles/aliases_cf
 
 # enable completions
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
