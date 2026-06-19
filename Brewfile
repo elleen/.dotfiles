@@ -1,8 +1,7 @@
-tap 'homebrew/bundle'
-
 brew 'ffmpeg'
 brew 'git'
 brew 'gpg'
+brew 'openjdk'
 brew 'jenv'
 brew 'imagemagick'
 brew 'mas'

@@ -17,7 +17,6 @@ if test ! $(which brew); then
 fi
 
 brew update
-brew tap homebrew/bundle
 brew bundle
 printf "brewing done\n"
 ###
@@ -72,7 +71,7 @@ done
 printf "dotfiles install done\n"
 
 ### dev setup
-read -n 1 -s -r -p "press any key to do dev setup, ctrl+z to quit"
+read -n 1 -s -r -p "press any key to do dev setup, ctrl+z to quit\n"
 
 # install java
 printf "installing java\n"
