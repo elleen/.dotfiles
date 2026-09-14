@@ -12,5 +12,5 @@ brew 'ykman'
 
 cask '1password'
 cask 'alfred'
-cask 'divvy'
+cask 'google-chrome'
 cask 'firefox'

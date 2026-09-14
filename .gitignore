@@ -1,6 +1,6 @@
 old/
 .gitconfig
-.zshrc_cf
-aliases_cf
+.zshrc_vs
+aliases_vs
 Brewfile.lock.json
 .DS_Store

@@ -6,13 +6,17 @@ xcode to be installed\n"
 read -n 1 -s -r -p "press any key to continue, ctrl+z to quit"
 printf "\n"
 
+### get homedir
+read -p "enter homedir name: " homedir
+###
+
 ### install Homebrew stuff
 printf "setting up Homebrew\n"
 # install brew if it's not installed
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >> /Users/elleen/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/elleen/.zprofile
+  echo >> /Users/$homedir/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$homedir/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -20,6 +24,12 @@ brew update
 brew bundle
 printf "brewing done\n"
 ###
+
+### git config
+read -p "enter git user.name: " gitusername
+read -p "enter git user.email: " gituseremail
+git config --global user.name "$gitusername"
+git config --global user.email "$gituseremail"
 
 ### git completion
 mkdir -p ~/.zsh && cd ~/.zsh

@@ -7,6 +7,7 @@ bc I have struggled far too many times setting up new machines 🥲
 - Import Afterglow as terminal theme
 - Set up Alfred to replace spotlight search
 - Set up Firefox profiles https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles
+- Install Tiley https://github.com/yusuke/tiley
 
 ### macOS
 - Sound > Play sound on startup, Play user interface sound effects, Play feedbackk when volume is changed --> off
@@ -16,6 +17,9 @@ bc I have struggled far too many times setting up new machines 🥲
 - Trackpad > scroll & zoom > natural scrolling --> off
 - Lock screen hot corner (bottom left)
 - Control center hot corner (top right)
+- Date & Time > 24-hour time
+- Menu Bar > Battery Options > Show Percentage
+- Menu Bar > Clock Options > Display the time with seconds
 
 ## todos
 - gpg aliases
