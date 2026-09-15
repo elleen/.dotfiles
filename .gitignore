@@ -1,6 +1,8 @@
 old/
+.vim/.netrwhist
 .gitconfig
 .zshrc_vs
 aliases_vs
+Brewfile_vs
 Brewfile.lock.json
 .DS_Store

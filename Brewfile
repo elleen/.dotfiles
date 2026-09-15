@@ -1,16 +1,20 @@
 brew 'ffmpeg'
 brew 'git'
+brew 'gh'
 brew 'gpg'
 brew 'openjdk'
 brew 'jenv'
+brew 'jq'
 brew 'imagemagick'
 brew 'mas'
 brew 'npm'
+brew 'pyenv'
 brew 'python'
 brew 'sqlite3'
 brew 'ykman'
 
 cask '1password'
 cask 'alfred'
-cask 'google-chrome'
-cask 'firefox'
+# cask 'firefox'
+
+

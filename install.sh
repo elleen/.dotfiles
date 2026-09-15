@@ -6,30 +6,43 @@ xcode to be installed\n"
 read -n 1 -s -r -p "press any key to continue, ctrl+z to quit"
 printf "\n"
 
-### get homedir
-read -p "enter homedir name: " homedir
-###
+read -p "is this a work computer? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  work_setup=true
+fi
 
 ### install Homebrew stuff
 printf "setting up Homebrew\n"
 # install brew if it's not installed
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >> /Users/$homedir/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$homedir/.zprofile
+  echo >> $HOME/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 brew update
 brew bundle
+
+if [ $work_setup = true ]; then
+  brew bundle install --file="$HOME/.dotfiles/Brewfile_vs"
+fi
+
 printf "brewing done\n"
 ###
 
 ### git config
-read -p "enter git user.name: " gitusername
-read -p "enter git user.email: " gituseremail
-git config --global user.name "$gitusername"
-git config --global user.email "$gituseremail"
+read -p "configure git? (y/n): " -n 1 -r
+echo
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  read -p "enter git user.name: " gitusername
+  read -p "enter git user.email: " gituseremail
+  git config --global user.name "$gitusername"
+  git config --global user.email "$gituseremail"
+fi
+###
 
 ### git completion
 mkdir -p ~/.zsh && cd ~/.zsh
@@ -80,15 +93,19 @@ for f in .!(|.); do
 done
 printf "dotfiles install done\n"
 
-### dev setup
-read -n 1 -s -r -p "press any key to do dev setup, ctrl+z to quit\n"
 
-# install java
-printf "installing java\n"
-java_dir=/Library/Java/JavaVirtualMachines/
-for version in ${java_dir}*/
-do
-  java_version=${version}Contents/Home
-  jenv add $java_version
-done
-printf "jenv setup done\n"
+
+### dev setup
+read -n 1 -s -r -p "press any key to do dev setup, ctrl+z to quit"
+echo
+
+### java / jenv
+read -p "configure java? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+  # add latest java to jenv
+  # for more info: https://github.com/jenv/jenv
+  jenv add "$(/usr/libexec/java_home)"
+  printf "java / jenv setup done\n"
+fi
