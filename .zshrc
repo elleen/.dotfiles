@@ -36,4 +36,12 @@ PS1='%F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_}$(parse_git_dirty) %F
 eval "$(jenv init -)"
 jenv enable-plugin export
 
+# herdr config
+HERDR_CONFIG_PATH=~/.dotfiles/herdr-config.toml
+
 ###
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/elleen.pan/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions

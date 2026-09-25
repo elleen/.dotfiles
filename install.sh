@@ -41,6 +41,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   read -p "enter git user.email: " gituseremail
   git config --global user.name "$gitusername"
   git config --global user.email "$gituseremail"
+  git config --global push.autoSetupRemote true
 fi
 ###
 

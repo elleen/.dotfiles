@@ -5,4 +5,6 @@ old/
 aliases_vs
 Brewfile_vs
 Brewfile.lock.json
+.docker/
 .DS_Store
+
